@@ -47,3 +47,10 @@ Interface with Raspberry Pi Zero to function as a mass storage device
 <br>&nbsp;&nbsp;&nbsp;&nbsp;```stop)```
 <br>&nbsp;&nbsp;&nbsp;&nbsp;```*)```
 <br>```esac```
+```
+case "$1" in
+  start)
+    sudo modprobe g_mass_storage file=/piusb.bin stall=0 ro=0
+  stop)
+  *)
+```
