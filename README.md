@@ -16,9 +16,17 @@ Interface with Raspberry Pi Zero to function as a mass storage device
 <br>Then append the line below
 <br>```dwc2```
 4. Save and quit (same as with config.txt)
-### Step 3 - Create a container file using ```dd```
+### Step 3 - Creating and Mounting a container file using ```dd```
 1. This command below will create an empty 1GB file 
 <br> ```sudo dd bs=1M if=/dev/zero of/piusb.bin count=1024```
 <br> You can alter the size of count to fit your specs
 2. Format the file as a FAT32 file system by typing
 <br> ```sudo mkdosfs /piusb.bin -F 32 -I```
+3. To mount the container file, let us create a folder where we shall mount the file system
+<br> ```sudo mkdir /mnt/usb_share```
+4. To mount the container file automatically at boot time, we have to edit the file system table
+<br> ```sudo nano /etc/fstab```
+<br>Append the line below to the end of the file
+<br> ```/piusb.bin /mnt/usb_share vfat users,umask=000 0 2```
+<br>Ctrl + O to save, then, Ctrl + X to quit
+### Step 4 - 
