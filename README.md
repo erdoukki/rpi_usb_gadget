@@ -1,4 +1,5 @@
 # rpi_usb_gadget
+## by Alfred Abanto, Alfred Accad, Dave Ramirez
 Interface with Raspberry Pi Zero to function as a mass storage device
 ### Step 1 Setting Up Pi Zero
 1. Download Raspbian Jessie [here](http://downloads.raspberrypi.org/raspbian/images/raspbian-2017-07-05/). 
