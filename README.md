@@ -1,7 +1,7 @@
 # rpi_usb_gadget
 Interface with Raspberry Pi Zero to function as a mass storage device
 ### Step 1 Setting Up Pi Zero
-1. Download Raspbian Jessie [here](google.com). 
+1. Download Raspbian Jessie [here](http://downloads.raspberrypi.org/raspbian/images/raspbian-2017-07-05/). 
 2. Once downloaded, flash the Raspbian Jessie full or Lite onto the SD card. 
 3. Since we are using a recent release of Jessie, create a new file called ```ssh``` in the SD card, as it is disabled by default. Creating this file will enable SSH.
 4. Open ```cmdline.txt```.  Insert ```modules-load-dwc2,g_ether``` after ```rootwait```. NOTE: This file separates commands by single spaces!
@@ -49,3 +49,9 @@ case "$1" in
   *)
 ```
 2. Remove the device and reinsert, you will now see it as a mass storage device!
+
+## References:
+https://pi.gbaman.info/?p=699
+<br>https://magpi.raspberrypi.org/articles/pi-zero-w-smart-usb-flash-drive
+<br>https://www.stuffaboutcode.com/2012/06/raspberry-pi-run-program-at-start-up.html
+<br>https://www.raspberrypi.org/forums/viewtopic.php?t=154384
