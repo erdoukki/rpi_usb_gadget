@@ -29,4 +29,21 @@ Interface with Raspberry Pi Zero to function as a mass storage device
 <br>Append the line below to the end of the file
 <br> ```/piusb.bin /mnt/usb_share vfat users,umask=000 0 2```
 <br>Ctrl + O to save, then, Ctrl + X to quit
-### Step 4 - 
+### Step 4 - Replace g_ether with g_mass_storage
+1. To make the Pi Zero appear as a mass storage device, we have to edit the cmdline.txt and modules files again.
+<br>For the cmdline.txt:
+<br>```sudo nano /boot/cmdline.txt```
+<br>Replace ```g_ether``` with ```g_mass_storage```
+<br> And for modules:
+<br>```sudo nano /etc/modules```
+<br> Append the line with ```g_mass_storage```, after the ```dwc2``` line we did earlier
+### Step 5 - Load the module at boot time
+1. We create a script in order to initialize the modeule using ```modprobe```. First, type
+<br>```sudo nano /etc/init.d/scriptname```
+<br> Put the script below
+<br>``case "$1" in 
+        start)
+          sudo modprobe g_mass_storage file=/piusb.bin stall=0 ro=0
+        stop)
+        *)
+      esac```
