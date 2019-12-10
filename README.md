@@ -15,4 +15,10 @@ Interface with Raspberry Pi Zero to function as a mass storage device
 <br>```sudo nano /etc/modules```
 <br>Then append the line below
 <br>```dwc2```
-4.Save and quit (same as with config.txt)
+4. Save and quit (same as with config.txt)
+### Step 3 - Create a container file using ```dd```
+1. This command below will create an empty 1GB file 
+<br> ```sudo dd bs=1M if=/dev/zero of/piusb.bin count=1024```
+<br> You can alter the size of count to fit your specs
+2. Format the file as a FAT32 file system by typing
+<br> ```sudo mkdosfs /piusb.bin -F 32 -I```
