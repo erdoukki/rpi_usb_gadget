@@ -40,7 +40,7 @@ Interface with Raspberry Pi Zero to function as a mass storage device
 ### Step 5 - Load the module at boot time
 1. We create a script in order to initialize the modeule using ```modprobe```. First, type
 <br>```sudo nano /etc/init.d/scriptname```
-<br> Put the script below
+<br> Put the script below or copy this [file](https://github.com/jmaccad1/rpi_usb_gadget/blob/master/scriptname)
 ```
 case "$1" in
   start)
