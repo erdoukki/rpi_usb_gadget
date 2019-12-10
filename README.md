@@ -41,12 +41,6 @@ Interface with Raspberry Pi Zero to function as a mass storage device
 1. We create a script in order to initialize the modeule using ```modprobe```. First, type
 <br>```sudo nano /etc/init.d/scriptname```
 <br> Put the script below
-<br>```case "$1" in```
-<br>&nbsp;&nbsp;&nbsp;&nbsp;```start)```
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```sudo modprobe g_mass_storage file=/piusb.bin stall=0 ro=0```
-<br>&nbsp;&nbsp;&nbsp;&nbsp;```stop)```
-<br>&nbsp;&nbsp;&nbsp;&nbsp;```*)```
-<br>```esac```
 ```
 case "$1" in
   start)
@@ -54,3 +48,4 @@ case "$1" in
   stop)
   *)
 ```
+2. Remove the device and reinsert, you will now see it as a mass storage device!
